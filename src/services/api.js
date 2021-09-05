@@ -13,18 +13,16 @@ class Animes{
   }
   
   // TODO listar TODOS os filmes - Finished
-    static async getAllFilms(){
+    static async getAllFilms(limitID){
       let ArrayFilmes = []
-      let filmes = {}
-      const object = await api.get('/films')
+      const object = await api.get(`/films?limit=${limitID}`)
       for(let i in object.data){
         ArrayFilmes.push({"Titulo": object.data[i].title, "ID": object.data[i].id})
       }
-      const result = {...ArrayFilmes}
-      // const result = ArrayFilmes
+      const result = ArrayFilmes
       return result
-
     }
+
 }
 
 module.exports = Animes;

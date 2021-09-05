@@ -25,7 +25,8 @@ app.get('/getFilm/:id', async (req, res) => {
 });
 
 app.get('/allFilms', async (req, res) => {
-  const result = await animes.getAllFilms()
+    const limitID = req.query.limit || 20
+    const result = await animes.getAllFilms(limitID)
   return res.status(200).json(result);
 });
 
