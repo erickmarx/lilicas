@@ -1,6 +1,6 @@
 require('dotenv').config();
 const express = require('express');
-const { getFilmeById } = require('./services/api');
+const animes = require('./services/api');
 
 const app = express();
 
@@ -18,9 +18,14 @@ app.get('/health', (req, res) => {
   return res.status(200).json(obj);
 });
 
-// TODO receber o id como parametro na URL - Finish
+// TODO receber o id como parametro na URL - Finished
 app.get('/getFilm/:id', async (req, res) => {
-  const result = await getFilmeById(req.params.id)
+  const result = await animes.getFilmById(req.params.id)
+  return res.status(200).json(result);
+});
+
+app.get('/allFilms', async (req, res) => {
+  const result = await animes.getAllFilms()
   return res.status(200).json(result);
 });
 
