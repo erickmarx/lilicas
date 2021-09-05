@@ -1,0 +1,24 @@
+{
+  "name": "lilicas",
+  "version": "1.0.0",
+  "description": "api de consultas de animes do estudio Ghibli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erickmarx/lilicas.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/erickmarx/lilicas/issues"
+  },
+  "homepage": "https://github.com/erickmarx/lilicas#readme",
+  "dependencies": {
+    "axios": "^0.21.3",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1"
+  }
+}
