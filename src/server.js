@@ -18,9 +18,9 @@ app.get('/health', (req, res) => {
   return res.status(200).json(obj);
 });
 
-// TODO receber o id como parametro na URL
-app.get('/getFilm', async (req, res) => {
-  const result = await getFilmeById('58611129-2dbc-4a81-a72f-77ddfc1b1b49');
+// TODO receber o id como parametro na URL - Finish
+app.get('/getFilm/:id', async (req, res) => {
+  const result = await getFilmeById(req.params.id)
   return res.status(200).json(result);
 });
 
