@@ -23,3 +23,4 @@ added listar filmes
 added listar um filmes
 added listar maximo de X filmes
 added ordenar lista de filmes e reverso
+added favoritos e refactor MVC
