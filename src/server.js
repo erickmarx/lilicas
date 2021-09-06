@@ -26,9 +26,12 @@ app.get('/getFilm/:id', async (req, res) => {
 
 app.get('/allFilms', async (req, res) => {
     const limitID = req.query.limit || 20
-    const result = await animes.getAllFilms(limitID)
+    const order = req.query.order || 0
+    const result = await animes.getAllFilms(limitID, order)
   return res.status(200).json(result);
 });
+
+
 
 app.listen(process.env.PORT || 3000, () =>
   console.log('app listening on port 3000')
