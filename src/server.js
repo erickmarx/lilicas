@@ -1,7 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const animes = require('./services/api');
-
+const routes = require('./routes/index')
 const app = express();
 
 app.use(express.json());
@@ -18,16 +18,7 @@ app.get('/health', (req, res) => {
   return res.status(200).json(obj);
 });
 
-// TODO receber o id como parametro na URL - Finished
-app.get('/getFilm/:id', async (req, res) => {
-  const result = await animes.getFilmById(req.params.id)
-  return res.status(200).json(result);
-});
-
-app.get('/allFilms', async (req, res) => {
-  const result = await animes.getAllFilms()
-  return res.status(200).json(result);
-});
+routes(app)
 
 app.listen(process.env.PORT || 3000, () =>
   console.log('app listening on port 3000')
