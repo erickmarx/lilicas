@@ -5,7 +5,7 @@
 - Autenticacao JWT
 <!-- - Lista os animes em ordem alfabetica (lista deve ser paginadas) -->
 <!-- - Consulta animes por id -->
-- Favoritar animes (salvar o nome do anime)
+<!-- - Favoritar animes (salvar o nome do anime) -->
   - adicionar, remover e consultar os animes da lista
 ----------------------------------------------------------------
 API Estudio Ghibli

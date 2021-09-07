@@ -1,4 +1,4 @@
-const db = require('../services/animesGhibli')
+const db = require('../services/animesGhibliDB')
 const api = require('../services/api')
 
 class FavoritoController{
@@ -10,11 +10,23 @@ class FavoritoController{
     }
 
     static async favoritar(req, res){
-    const id = req.params.id
     const titulo = await api.getFilmById(req.params.id)
     const favoritos = new db()
-    const result = await favoritos.favoritar(id, titulo.title)
+    const result = await favoritos.favoritar(req.params.id, titulo.title)
     return res.status(200).json(result);
+  }
+
+  static removeFav(req, res){
+    const favoritos = new db()
+    favoritos.removeFav(req.params.id)
+    return res.status(200).json(`${req.params.id} EXCLUIDO`)
+  }
+
+  static async restoreFav(req, res){
+    const favoritos = new db()
+    const result = await favoritos.restoreFav(req.params.id)
+    return res.status(200).json(`${req.params.id} RESTAURADO`)
+    // return result
   }
 }
 
