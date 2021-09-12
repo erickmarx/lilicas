@@ -2,7 +2,7 @@
 // const router = Router()
 const AnimesController = require('../controllers/animesController')
 
-// // TODO favoritar filmes
+// FIXED favoritar filmes
 // router
 //     .get('/AllFilms', AnimesController.listarTodosAnimes)
 //     .get('/Film/:id', AnimesController.listarUmAnime) 
