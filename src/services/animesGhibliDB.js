@@ -2,7 +2,7 @@ const database = require('../../models/index')
 
 // TODO receber o id como parametro na URL - Finished
 
-class Favoritos{
+class Database{
 
     async listarTodosFav(){
         return await database.Favoritos.findAll()
@@ -20,7 +20,18 @@ class Favoritos{
     async restoreFav(idFav){
         console.log(idFav)
         await database.Favoritos.restore({where: {idFav: idFav}}) 
+
+    //------------------------------//
     }
+
+    async criarUser(infos){
+        return await database.users.create(infos)
+    }
+
+    async verifyUsername(user){
+        return await database.users.findOne({where: {user: user}})
+    }
+
 }
 
-module.exports = Favoritos
+module.exports = Database

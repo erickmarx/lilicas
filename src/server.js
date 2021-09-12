@@ -3,8 +3,10 @@ const express = require('express');
 const animes = require('./services/api');
 const routes = require('./routes/index')
 const app = express();
+const UserController = require('./controllers/usersController')
 
 app.use(express.json());
+app.use(express.urlencoded({extended: true}))
 
 app.get('/health', (req, res) => {
   const obj = {
@@ -13,7 +15,7 @@ app.get('/health', (req, res) => {
     clientHeaders: {
       host: req.headers.host,
       userAgent: req.headers['user-agent'],
-    },
+    }
   };
   return res.status(200).json(obj);
 });

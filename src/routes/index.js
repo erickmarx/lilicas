@@ -1,11 +1,19 @@
 const animes = require('./animes')
 const favoritos = require('./favoritos')
+const users = require('./users')
 
-module.exports = app => {
+// module.exports = app => {
 
-    app.use(
-        animes,
-        favoritos
-    )
+//     app.use(
+//         animes,
+//         favoritos,
+//         users
+//     )
 
+// }
+
+module.exports = app =>{
+    animes(app)
+    favoritos(app)
+    users(app)
 }
