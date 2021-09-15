@@ -20,3 +20,11 @@ passport.use(new LocalStrategy({usernameField: 'user', passwordField: 'pwd', ses
         }
         
 })
+
+passport.bearer(new BearerStrategy({usernameField: 'user', passwordField: 'pwd', session: false}), async (user, pwd, done) => {
+    try {
+        
+    } catch (error) {
+        
+    }
+})

@@ -9,7 +9,7 @@ class UserController {
     try {
       await new db().criarUser(infos);
       res.status(201).json("Usuario Criado");
-    } catch (error) {
+    }catch (error) {
       console.log(error);
       throw new Error();
     }
@@ -30,10 +30,6 @@ class UserController {
 
   async SearchUser(user) {
     return await new db().verifyUsername(user);
-  }
-
-  teste() {
-    return "sucesso";
   }
 }
 
